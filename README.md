@@ -34,7 +34,7 @@ Equivalent of bootstrap-select, but independent of jquery. Please download and l
   ```html
    <div class="form-group mt-5">
         <label for="countrySelect">Country (Serverside)</label>
-        <select class="form-select serverside serverside_custom" id="countrySelectServerside" data-url="">
+        <select class="form-select serverside serverside_custom" id="countrySelectServerside" data-url="https://myserver.com/fetch_select_data">
         </select>
     </div>
   ```
@@ -45,4 +45,22 @@ Equivalent of bootstrap-select, but independent of jquery. Please download and l
     const custom_select_serverside = new CustomSelect(serverside_select_element);
     // (nothing new here)
   ```
+
+  Each time a key is pressed in the search box of the select, a call like this one is made to the server:
+
+  ```javascript
+  fetch('https://myserver.com/fetch_select_data?search=mysearch')
+  ```
+  Your server should answer a json in the form:
+  ```
+  [
+    { "id": "AL", "text": "Albania" },
+    { "id": "AD", "text": "Andorra" },
+    { "id": "AM", "text": "Armenia" },
+    { "id": "AT", "text": "Austria" },
+    { "id": "AZ", "text": "Azerbaijan" }
+  ]
+  ```
+
+The keys of each row **MUST BE** id and text.
   

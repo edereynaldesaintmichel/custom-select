@@ -1,0 +1,12 @@
+.custom_select .form-select {
+	white-space: nowrap;
+}
+
+a.dropdown-item.focus:not(.active) {
+    background: #82b3fd;
+    color: white;
+}
+
+a.dropdown-item {
+    cursor: pointer;
+}

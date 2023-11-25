@@ -24,4 +24,25 @@ Equivalent of bootstrap-select, but independent of jquery. Please download and l
   ```
 
   And you get:
+  ![Screenshot_2023-11-25_22-04-43](https://github.com/edereynaldesaintmichel/custom-select/assets/152026212/2dda9f3e-57af-410a-9bb1-af17ec12a9bb)
+
+
+- ## Server Side
+  Client side selects need a server to work properly.
+
+  HTML
+  ```html
+   <div class="form-group mt-5">
+        <label for="countrySelect">Country (Serverside)</label>
+        <select class="form-select serverside serverside_custom" id="countrySelectServerside" data-url="">
+        </select>
+    </div>
+  ```
+
+  JS
+  ```javascript
+    const serverside_select_element = document.getElementById('countrySelectServerside');
+    const custom_select_serverside = new CustomSelect(serverside_select_element);
+    // (nothing new here)
+  ```
   
